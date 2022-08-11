@@ -1,7 +1,6 @@
 import Input from '../../input'
 import logo from '../../../img/logo-black.png'
-// import LoginPass from '../../login-password/LoginPass'
-import './style.css'
+import '../../../css/style.css'
 
 const LogIn = () => (
   <div className="content">

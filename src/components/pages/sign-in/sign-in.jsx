@@ -1,6 +1,6 @@
 import Input from '../../input'
 import logo from '../../../img/logo-black.png'
-import '../log-in/style.css'
+import '../../../css/style.css'
 
 const SignIn = () => (
   <div className="content">

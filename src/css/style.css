@@ -94,15 +94,15 @@ body {
   color: #e1e1e1;
 }
 
-.buttons_field {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+.error-message {
+  color: #000;
+  height: 60px;
+  font-size: 18px;
+  padding: 10px;
 }
 
 .button {
+  margin-top: 20px;
   width: 278px;
   border-radius: 6px;
   padding: 16px 0px;

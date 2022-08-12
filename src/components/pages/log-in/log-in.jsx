@@ -1,20 +1,47 @@
-import Input from '../../input'
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/function-component-definition */
+import { useState } from 'react'
+// import Input from '../../input'
 import logo from '../../../img/logo-black.png'
+import useInputRequired from '../../functions/useInputRequired'
+import handleSubmitLogin from '../../functions/handleSubmitLogin'
 import '../../../css/style.css'
 
-const LogIn = () => (
-  <div className="content">
-    <div className="form">
-      <div>
-        <img src={logo} className="logo" alt="required field" />
-      </div>
-      <Input placeholder="Логин" />
-      <Input placeholder="Пароль" />
-      <div className="buttons_field">
+export default function LogIn() {
+  const [message, setMessage] = useState('')
+
+  function setErrorMessage(e) {
+    setMessage(e)
+    console.log('Ошибка')
+  }
+
+  const login = useInputRequired('text', 'Логин', '', true, setErrorMessage)
+  const password = useInputRequired(
+    'password',
+    'Пароль',
+    '',
+    true,
+    setErrorMessage
+  )
+
+  return (
+    <div className="content">
+      <form className="form">
+        <div>
+          <img src={logo} className="logo" alt="required field" />
+        </div>
+        <div className="input_field">
+          <input className="input" {...login} />
+        </div>
+        <div className="input_field">
+          <input className="input" {...password} />
+        </div>
+        <span className="error-message">{message}</span>
+
         <button
-          type="button"
+          type="submit"
           className="button"
-          // onClick={() => handleSubmit('title', 'def', 'price')}
+          onClick={(event) => handleSubmitLogin(event)}
         >
           Войти
         </button>
@@ -25,9 +52,7 @@ const LogIn = () => (
         >
           Зарегистрироваться
         </button>
-      </div>
+      </form>
     </div>
-  </div>
-)
-
-export default LogIn
+  )
+}

@@ -1,24 +1,16 @@
 /* eslint-disable react/function-component-definition */
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 
-export default function useInputRequired(
-  type,
-  text,
-  currentValue,
-  required,
-  setErrorMessage
-) {
-  const [value, setValue] = useState(currentValue)
-  const [placeholder, setError] = useState(text)
+export default function useInputRequired(type, currentValue, setErrorMessage) {
+  const [value, setValue] = useState('')
+  const [placeholder, setError] = useState(currentValue)
   const minLengthPassword = 8
 
   return {
     type,
     value,
     onBlur: (event) => {
-      if (!event.target.value && required) setError('Required field')
-      else setError('')
+      if (!event.target.value) setError('Required field')
       if (
         event.target.type === 'password' &&
         event.target.value.length < minLengthPassword
@@ -29,10 +21,4 @@ export default function useInputRequired(
     placeholder,
     onChange: (event) => setValue(event.target.value),
   }
-}
-
-useInputRequired.propTypes = {
-  type: PropTypes.string.isRequired,
-  currentValue: PropTypes.string.isRequired,
-  required: PropTypes.bool.isRequired,
 }

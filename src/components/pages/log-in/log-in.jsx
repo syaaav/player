@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/function-component-definition */
 import { useState } from 'react'
-// import Input from '../../input'
+import { Link } from 'react-router-dom'
 import logo from '../../../img/logo-black.png'
 import useInputRequired from '../../functions/useInputRequired'
 import handleSubmitLogin from '../../functions/handleSubmitLogin'
@@ -15,14 +15,8 @@ export default function LogIn() {
     console.log('Ошибка')
   }
 
-  const login = useInputRequired('text', 'Логин', '', true, setErrorMessage)
-  const password = useInputRequired(
-    'password',
-    'Пароль',
-    '',
-    true,
-    setErrorMessage
-  )
+  const login = useInputRequired('text', 'Логин', setErrorMessage)
+  const password = useInputRequired('password', 'Пароль', setErrorMessage)
 
   return (
     <div className="content">
@@ -31,10 +25,10 @@ export default function LogIn() {
           <img src={logo} className="logo" alt="required field" />
         </div>
         <div className="input_field">
-          <input className="input" {...login} />
+          <input className="input" {...login} required />
         </div>
         <div className="input_field">
-          <input className="input" {...password} />
+          <input className="input" {...password} required />
         </div>
         <span className="error-message">{message}</span>
 
@@ -50,7 +44,9 @@ export default function LogIn() {
           className="button additional"
           // onClick={() => handleSubmit('title', 'def', 'price')}
         >
-          Зарегистрироваться
+          <Link className="link" to="/user/signup/">
+            Зарегистрироваться
+          </Link>
         </button>
       </form>
     </div>

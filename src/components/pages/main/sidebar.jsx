@@ -1,12 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import playlist01 from '../../../img/playlist01.png'
-import playlist02 from '../../../img/playlist02.png'
-import playlist03 from '../../../img/playlist03.png'
+import SideBarSkeleton from './sidebar-skeleton'
+// import playlist01 from '../../../img/playlist01.png'
+// import playlist02 from '../../../img/playlist02.png'
+// import playlist03 from '../../../img/playlist03.png'
 import '../../../css/style.css'
 
 const SideBar = () => (
   <div className="main__sidebar sidebar">
-    <div className="sidebar__personal">
+    {/* {loading && <SideBarSkeleton />}
+    {!loading && videos.map((list, index) => <PlaylistItem />)} */}
+    <SideBarSkeleton />
+    {/* <div className="sidebar__personal">
       <p className="sidebar__personal-name">Sergey.Ivanov</p>
       <div className="sidebar__avatar" />
     </div>
@@ -40,7 +44,7 @@ const SideBar = () => (
           </a>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 )
 

@@ -451,6 +451,22 @@ body {
   margin-bottom: 12px;
 }
 
+.playlist__item-skeleton {
+  margin-bottom: 12px;
+  background-repeat: no-repeat;
+  height: 51px;
+  animation: fade 1s linear infinite alternate;
+
+  background-image: linear-gradient(#313131 51px, transparent 0),
+    linear-gradient(#313131 30px, transparent 0),
+    linear-gradient(#313131 30px, transparent 0),
+    linear-gradient(#313131 30px, transparent 0);
+
+  background-size: 51px 51px, 356px 19px, 271px 19px, 305px 19px;
+
+  background-position: 0px 0px, 65px 15px, 460px 15px, 795px 15px;
+}
+
 .playlist__track {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -637,6 +653,21 @@ body {
 
 .sidebar__item:not(:last-child) {
   margin-bottom: 30px;
+}
+
+.sidebar__item-skeleton {
+  background-repeat: no-repeat;
+  height: 1020px;
+  width: 250px;
+  animation: fade 1s linear infinite alternate;
+
+  background-image: linear-gradient(#313131 150px, transparent 0),
+    linear-gradient(#313131 150px, transparent 0),
+    linear-gradient(#313131 150px, transparent 0);
+
+  background-size: 250px 150px, 250px 150px, 250px 150px;
+
+  background-position: 0px 330px, 0px 510px, 0px 690px;
 }
 
 .sidebar__link {
@@ -948,4 +979,13 @@ body {
 
 .volume__progress-line {
   width: 109px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
 }

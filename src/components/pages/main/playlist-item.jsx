@@ -1,3 +1,4 @@
+import icons from '../../../img/icon/sprite.svg'
 import '../../../css/style.css'
 
 const PlaylistItem = ({ obj }) => (
@@ -6,7 +7,7 @@ const PlaylistItem = ({ obj }) => (
       <div className="track__title">
         <div className="track__title-image">
           <svg className="track__title-svg">
-            <use xlinkHref="img/icon/sprite.svg#icon-note" />
+            <use href={`${icons}#icon-note`} />
           </svg>
         </div>
         <div className="track__title-text">
@@ -27,7 +28,7 @@ const PlaylistItem = ({ obj }) => (
       </div>
       <div className="track__time">
         <svg className="track__time-svg">
-          <use xlinkHref="img/icon/sprite.svg#icon-like" />
+          <use href={`${icons}#icon-like`} />
         </svg>
         <span className="track__time-text">
           {' '}

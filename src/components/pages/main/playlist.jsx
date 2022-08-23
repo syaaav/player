@@ -1,7 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable jsx-a11y/anchor-has-content */
 import { useEffect, useState } from 'react'
 import PlaylistSkeleton from './playlist-skeleton'
 import PlaylistItem from './playlist-item'

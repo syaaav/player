@@ -18,7 +18,7 @@ const Main = () => (
             <span className="burger__line" />
             <span className="burger__line" />
           </div>
-          <Menu />
+          <Menu className="hidden" />
         </nav>
         <CenterBlock />
         <SideBar />

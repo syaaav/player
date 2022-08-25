@@ -110,25 +110,29 @@ body {
 
 .main__nav {
   width: 244px;
+  width: auto;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   background-color: #181818;
-  padding: 20px 0 20px 36px;
+  padding: 36px 0 20px 36px;
 }
 
 .main__centerblock {
-  -webkit-box-flex: 3;
-      -ms-flex-positive: 3;
-          flex-grow: 3;
+  width: auto;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  padding: 36px 40px 20px 111px;
 }
 
 .main__sidebar {
+  width: auto;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   max-width: 418px;
-  padding: 20px 90px 20px 78px;
+  padding: 36px 90px 20px 78px;
 }
 
 .nav__logo {
@@ -324,9 +328,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-bottom: 24px;
 }
 
@@ -336,8 +340,8 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
   overflow-y: auto;
 }
 
@@ -371,7 +375,7 @@ body {
 }
 
 .col04 {
-  width: 60px;
+  width: 45px;
   text-align: end;
 }
 
@@ -389,9 +393,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -490,6 +494,16 @@ body {
   stroke: #696969;
 }
 
+.track__time-svg:hover {
+  stroke: #acacac;
+  fill: transparent;
+}
+
+.track .liked {
+  stroke: #ffffff;
+  fill: #696969;
+}
+
 .track__time-text {
   font-style: normal;
   font-weight: 400;
@@ -534,7 +548,7 @@ body {
 
 .sidebar__block {
   height: 100%;
-  padding: 240px 0 0 0;
+  padding: 294px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

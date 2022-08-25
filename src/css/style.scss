@@ -108,23 +108,23 @@ body {
 
   &__nav {
     width: 244px;
-    // width: auto;
+    width: auto;
     flex-grow: 1;
     background-color: #181818;
-    padding: 20px 0 20px 36px;
+    padding: 36px 0 20px 36px;
   }
 
   &__centerblock {
-    // width: auto;
-    flex-grow: 3;
-    // padding: 20px 40px 20px 111px;
+    width: auto;
+    flex-grow: 2;
+    padding: 36px 40px 20px 111px;
   }
 
   &__sidebar {
-    // width: auto;
+    width: auto;
     flex-grow: 1;
     max-width: 418px;
-    padding: 20px 90px 20px 78px;
+    padding: 36px 90px 20px 78px;
   }
 }
 
@@ -279,13 +279,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 24px;
   }
 
   &__playlist {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
+    // flex-direction: column;
     overflow-y: auto;
   }
 }
@@ -321,7 +322,7 @@ body {
   width: 245px;
 }
 .col04 {
-  width: 60px;
+  width: 45px;
   text-align: end;
 }
 
@@ -335,7 +336,8 @@ body {
   &__track {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 }
@@ -411,7 +413,9 @@ body {
     color: #696969;
   }
 
-  //&__time {}
+  // &__time {
+  //   width: 64px;
+  // }
 
   &__time-svg {
     width: 14px;
@@ -419,6 +423,16 @@ body {
     margin-right: 17px;
     fill: transparent;
     stroke: #696969;
+  }
+
+  &__time-svg:hover {
+    stroke: #acacac;
+    fill: transparent;
+  }
+
+  .liked {
+    stroke: #ffffff;
+    fill: #696969;
   }
 
   &__time-text {
@@ -458,7 +472,7 @@ body {
 
   &__block {
     height: 100%;
-    padding: 240px 0 0 0;
+    padding: 294px 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

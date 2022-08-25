@@ -19,7 +19,7 @@ export default function LogIn() {
   const password = useInputRequired('password', 'Пароль', setErrorMessage)
 
   return (
-    <div className="content">
+    <div className="content-form">
       <form className="form">
         <div>
           <img src={logo} className="logo" alt="required field" />
@@ -30,24 +30,27 @@ export default function LogIn() {
         <div className="input_field">
           <input className="input" {...password} required />
         </div>
-        <span className="error-message">{message}</span>
-
-        <button
-          type="submit"
-          className="button"
-          onClick={(event) => handleSubmitLogin(event)}
-        >
-          Войти
-        </button>
-        <button
-          type="button"
-          className="button additional"
-          // onClick={() => handleSubmit('title', 'def', 'price')}
-        >
-          <Link className="link" to="/user/signup/">
-            Зарегистрироваться
-          </Link>
-        </button>
+        <div className="buttons_field">
+          <span className="error-message">{`${
+            message ? `${message}` : ''
+          }`}</span>
+          <button
+            type="submit"
+            className="button"
+            onClick={(event) => handleSubmitLogin(event)}
+          >
+            Войти
+          </button>
+          <button
+            type="button"
+            className="button additional"
+            // onClick={() => handleSubmit('title', 'def', 'price')}
+          >
+            <Link className="link" to="/user/signup/">
+              Зарегистрироваться
+            </Link>
+          </button>
+        </div>
       </form>
     </div>
   )

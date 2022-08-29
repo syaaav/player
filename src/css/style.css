@@ -193,16 +193,26 @@ body {
   border: 1px solid #d0cece;
 }
 
+.additional-link {
+  color: #000;
+}
+
 .additional:hover {
+  color: #000;
   background-color: #f4f5f6;
 }
 
 .additional:active {
+  color: #000;
   background-color: #d9d9d9;
 }
 
 .error-message {
   color: #000;
+}
+
+.link {
+  color: #fff;
 }
 
 .main {

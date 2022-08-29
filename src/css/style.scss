@@ -165,11 +165,16 @@ body {
   background-color: #fff;
   color: #000;
   border: 1px solid #d0cece;
+  &-link {
+    color: #000;
+  }
 }
 .additional:hover {
+  color: #000;
   background-color: #f4f5f6;
 }
 .additional:active {
+  color: #000;
   background-color: #d9d9d9;
 }
 
@@ -177,6 +182,9 @@ body {
   color: #000;
 }
 
+.link {
+  color: #fff;
+}
 // =================== main ====================//
 .main {
   flex: 1 1 auto;

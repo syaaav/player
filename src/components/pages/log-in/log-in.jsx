@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/function-component-definition */
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../../img/logo-black.png'
 import useInputRequired from '../../functions/useInputRequired'
@@ -12,11 +12,13 @@ export default function LogIn() {
 
   function setErrorMessage(e) {
     setMessage(e)
-    console.log('Ошибка')
+    // console.log('Ошибка')
   }
 
   const login = useInputRequired('text', 'Логин', setErrorMessage)
   const password = useInputRequired('password', 'Пароль', setErrorMessage)
+  const textLogin = useRef(null)
+  const textPassword = useRef(null)
 
   return (
     <div className="content-form">
@@ -25,10 +27,10 @@ export default function LogIn() {
           <img src={logo} className="logo" alt="required field" />
         </div>
         <div className="input_field">
-          <input className="input" {...login} required />
+          <input className="input" {...login} required ref={textLogin} />
         </div>
         <div className="input_field">
-          <input className="input" {...password} required />
+          <input className="input" {...password} required ref={textPassword} />
         </div>
         <div className="buttons_field">
           <span className="error-message">{`${
@@ -37,16 +39,14 @@ export default function LogIn() {
           <button
             type="submit"
             className="button"
-            onClick={(event) => handleSubmitLogin(event)}
+            onClick={(event) =>
+              handleSubmitLogin(event, textLogin, textPassword)
+            }
           >
             Войти
           </button>
-          <button
-            type="button"
-            className="button additional"
-            // onClick={() => handleSubmit('title', 'def', 'price')}
-          >
-            <Link className="link" to="/user/signup/">
+          <button type="button" className="button additional">
+            <Link className="additional-link" to="/user/signup/">
               Зарегистрироваться
             </Link>
           </button>

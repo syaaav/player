@@ -1,33 +1,46 @@
-// import { Navigate } from 'react-router-dom'
-// import { useHistory } from 'react-router-dom'
-// import { useState, useEffect } from 'react'
-// import { Navigate } from 'react-router-dom'
 import setRequest from './setRequest'
+import checkInputs from './checkInputs'
 
 export default function handleSubmitSign(
   event,
-  errorMessage,
   textLogin,
   textPassword,
   textSecondPassword,
   setErrorMessage,
   setSignUp
 ) {
+  event.preventDefault()
+
+  checkInputs(
+    textLogin.current,
+    textPassword.current,
+    textSecondPassword.current,
+    setErrorMessage
+  )
+
   if (
-    textPassword.current.value !== textSecondPassword.current.value ||
-    errorMessage ||
-    !textLogin.current.value ||
-    !textPassword.current.value ||
-    !textSecondPassword.current.value
-  ) {
-    event.preventDefault()
-    console.log('Регистрация НЕ прошла!')
-  } else {
-    setRequest(
-      textLogin.current.value,
-      textPassword.current.value,
-      setSignUp,
+    checkInputs(
+      textLogin.current,
+      textPassword.current,
+      textSecondPassword.current,
       setErrorMessage
     )
+  ) {
+    console.log('Запрос пошел')
+    setRequest(textLogin.current.value, textPassword.current.value)
+      .then((result) => {
+        console.log('Получилось', result)
+        setSignUp(true)
+        console.log('Меняем стэйт')
+      })
+      .catch((error) => {
+        console.log(error)
+        if (error.password) {
+          setErrorMessage(error.password[0])
+        }
+        if (error.username) {
+          setErrorMessage(error.username[0])
+        }
+      })
   }
 }

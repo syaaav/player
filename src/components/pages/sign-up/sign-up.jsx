@@ -1,38 +1,22 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/function-component-definition */
 import { useRef, useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import useInputRequired from '../../functions/useInputRequired'
 import handleSubmitSign from '../../functions/handleSubmitSign'
 import logo from '../../../img/logo-black.png'
 import '../../../css/style.css'
 
-export default function SignUp() {
+const SignUp = () => {
   const [message, setMessage] = useState('')
-  const [error, setError] = useState(false)
   const [isSignUp, setSignUp] = useState(false)
 
-  function setErrorMessage(e) {
-    if (e === '') {
-      setError(false)
-    } else {
-      setMessage(e)
-      setError(true)
-    }
-    console.log('Ошибка')
-  }
-
-  const login = useInputRequired('text', 'Логин', setErrorMessage)
-  const password = useInputRequired('password', 'Пароль', setErrorMessage)
-  const secondPassword = useInputRequired(
-    'password',
-    'Повторите пароль',
-    setErrorMessage
-  )
   const textLogin = useRef(null)
   const textPassword = useRef(null)
   const textSecondPassword = useRef(null)
+
+  function setErrorMessage(e) {
+    if (e !== '') {
+      setMessage(e)
+    }
+  }
 
   if (isSignUp) {
     return <Redirect to="/user/login" />
@@ -44,11 +28,24 @@ export default function SignUp() {
         <div>
           <img src={logo} className="logo" alt="Skypro" />
         </div>
-        <input className="input" {...login} required ref={textLogin} />
-        <input className="input" {...password} required ref={textPassword} />
         <input
           className="input"
-          {...secondPassword}
+          type="email"
+          placeholder="Электронная почта"
+          required
+          ref={textLogin}
+        />
+        <input
+          className="input"
+          type="password"
+          placeholder="Пароль"
+          required
+          ref={textPassword}
+        />
+        <input
+          className="input"
+          type="password"
+          placeholder="Повторите пароль"
           required
           ref={textSecondPassword}
         />
@@ -63,7 +60,6 @@ export default function SignUp() {
             onClick={(event) =>
               handleSubmitSign(
                 event,
-                error,
                 textLogin,
                 textPassword,
                 textSecondPassword,
@@ -79,3 +75,5 @@ export default function SignUp() {
     </div>
   )
 }
+
+export default SignUp

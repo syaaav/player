@@ -1,5 +1,5 @@
-const setRequest = async (login, password) => {
-  const response = await fetch('http://51.250.72.80:8090/user/signup/', {
+const setRequest = async (path, login, password) => {
+  const response = await fetch(`http://51.250.72.80:8090/${path}`, {
     method: 'POST',
     body: JSON.stringify({
       email: login,

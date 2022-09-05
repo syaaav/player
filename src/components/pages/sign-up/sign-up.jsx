@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import handleSubmitSign from '../../functions/handleSubmitSign'
+import handleSubmitSign from '../../functions/handle-submit-sign'
 import logo from '../../../img/logo-black.png'
 import '../../../css/style.css'
 

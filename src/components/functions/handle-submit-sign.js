@@ -1,5 +1,5 @@
 import setRequest from './setRequest'
-import checkInputs from './checkInputs'
+import checkInputs from './check-inputs-signup'
 
 export default function handleSubmitSign(
   event,
@@ -9,14 +9,8 @@ export default function handleSubmitSign(
   setErrorMessage,
   setSignUp
 ) {
+  const path = 'user/signup/'
   event.preventDefault()
-
-  checkInputs(
-    textLogin.current,
-    textPassword.current,
-    textSecondPassword.current,
-    setErrorMessage
-  )
 
   if (
     checkInputs(
@@ -27,7 +21,7 @@ export default function handleSubmitSign(
     )
   ) {
     console.log('Запрос пошел')
-    setRequest(textLogin.current.value, textPassword.current.value)
+    setRequest(path, textLogin.current.value, textPassword.current.value)
       .then((result) => {
         console.log('Получилось', result)
         setSignUp(true)
@@ -38,8 +32,8 @@ export default function handleSubmitSign(
         if (error.password) {
           setErrorMessage(error.password[0])
         }
-        if (error.username) {
-          setErrorMessage(error.username[0])
+        if (error.email) {
+          setErrorMessage(error.email[0])
         }
       })
   }

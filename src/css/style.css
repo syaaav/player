@@ -1011,4 +1011,34 @@ body {
 .volume__progress-line {
   width: 109px;
 }
+
+.page404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page404__icon {
+  font-size: 65px;
+}
+
+.page404__title {
+  margin-bottom: 30px;
+  font-size: 45px;
+}
+
+.page404__link {
+  font-size: 18px;
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

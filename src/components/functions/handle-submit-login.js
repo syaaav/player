@@ -17,7 +17,7 @@ export default function handleSubmitLogin(
       .then((result) => {
         console.log('Получилось', result)
         setLogIn(true)
-        console.log('Меняем стэйт')
+        console.log('Отправляем токен в store Redux')
       })
       .catch((error) => {
         console.log(error)

@@ -824,3 +824,23 @@ body {
     width: 109px;
   }
 }
+
+// =================== page-404 ====================//
+
+.page404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__icon {
+    font-size: 65px;
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-size: 45px;
+  }
+  &__link {
+    font-size: 18px;
+    color: #fff;
+  }
+}

@@ -12,15 +12,12 @@ export default function handleSubmitLogin(
   event.preventDefault()
 
   if (checkInputs(textLogin.current, textPassword.current, setErrorMessage)) {
-    console.log('Запрос пошел!')
     setRequest(path, textLogin.current.value, textPassword.current.value)
       .then((result) => {
-        console.log('Получилось', result)
         setLogIn(true)
-        console.log('Отправляем токен в store Redux')
+        localStorage.setItem('refresh', result.refresh)
       })
       .catch((error) => {
-        console.log(error)
         if (error.detail) {
           setErrorMessage(error.detail)
         }

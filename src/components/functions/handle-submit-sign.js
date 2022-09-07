@@ -22,13 +22,10 @@ export default function handleSubmitSign(
   ) {
     console.log('Запрос пошел')
     setRequest(path, textLogin.current.value, textPassword.current.value)
-      .then((result) => {
-        console.log('Получилось', result)
+      .then(() => {
         setSignUp(true)
-        console.log('Меняем стэйт')
       })
       .catch((error) => {
-        console.log(error)
         if (error.password) {
           setErrorMessage(error.password[0])
         }

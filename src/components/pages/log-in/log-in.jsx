@@ -20,7 +20,7 @@ export default function LogIn() {
   }
 
   if (isLogIn) {
-    return <Redirect to="/" />
+    return <Redirect to="/catalog/track/all/" />
   }
 
   return (
